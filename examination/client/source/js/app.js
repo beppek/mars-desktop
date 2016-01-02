@@ -8,4 +8,10 @@
 "use strict";
 
 //requires
+var $ = require('jQuery');
+
 $(document).ready(init);
+
+function init() {
+    alert("hello!");
+}
