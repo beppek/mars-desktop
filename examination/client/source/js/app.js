@@ -10,6 +10,7 @@
 //requires
 var $ = require('jQuery');
 
+//event listeners
 $(document).ready(function() {
 
     $("#startMemory").click(function() {
