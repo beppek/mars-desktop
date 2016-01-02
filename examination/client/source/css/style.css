@@ -19,3 +19,6 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     border-right: solid 2px aliceblue;
 }
+#menu li:hover {
+    cursor: pointer;
+}
