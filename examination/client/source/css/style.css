@@ -15,10 +15,27 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     padding: 0;
     position: absolute;
     top: 0;
-    left 0;
+    left: 0;
     height: 100vh;
     border-right: solid 2px aliceblue;
+    background-color: steelblue;
+}
+#menu ul {
+    width: 150px;
+    margin: 3rem 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
 }
 #menu li:hover {
     cursor: pointer;
+}
+#menuToggle {
+    position: absolute;
+    top: 1.5rem;
+    left: 65px;
+    text-decoration: none;
+}
+#workspace {
+    margin-left: 200px;
 }
