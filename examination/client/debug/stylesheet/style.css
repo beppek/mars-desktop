@@ -3,8 +3,19 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: rgb(25,25,25);
+    overflow: hidden;
 }
 p, a, li, h1, h2, h3, h4, h5, h6 {
     font-family: "Lucida Console", monospace;
     color: aliceblue;
+    font-size: 1.5rem;
+}
+#menu {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left 0;
+    height: 100vh;
+    border-right: solid 2px aliceblue;
 }
