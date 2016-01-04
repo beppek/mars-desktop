@@ -31,7 +31,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     padding: 0;
     list-style-type: none;
     text-align: center;
-    display: none;
+    /*display: none;*/
 }
 #menu li:hover {
     cursor: pointer;
@@ -72,13 +72,13 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .statusbar {
     background-color: steelblue;
-    height: 20px;
+    height: 30px;
 }
 .closeWindow {
     color: crimson;
     position: absolute;
     right: 5px;
-    line-height: 20px;
+    line-height: 30px;
 }
 .closeWindow:hover {
     cursor: pointer;
@@ -86,5 +86,5 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .appIcon {
     position: absolute;
     left: 5px;
-    line-height: 20px ;
+    line-height: 30px ;
 }

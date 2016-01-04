@@ -10,6 +10,8 @@
 //Requires
 var $ = require('jQuery');
 
+var dragObject;
+
 /**
  *
  * This module opens a new app window
@@ -37,24 +39,70 @@ function Window(app) {
 
 }
 
+/**
+ *
+ * Adds event listeners to the window and global window object
+ * @memberof Window.prototype
+ * */
 Window.prototype.addListeners = function() {
 
-    $(".window").mousedown(function(event) {
+    var that = this;
 
-        var dragObject = event.target;
-        this.drag(dragObject);
+    $(".statusbar").mousedown(function(event) {
 
-    }.bind(this));
+        dragObject = event.target.parentNode;
+        that.mouseDown();
 
-    window.addEventListener("mouseup", this.mouseUp, false);
+    });
+
+    window.addEventListener("mouseup", function() {
+
+        that.drop();
+
+    }, false);
 
 };
 
-Window.prototype.drag = function(dragObject) {
+/**
+ *
+ * Fires an eventlistener to listen for the mouse to move
+ * @memberof Window.prototype
+ * */
+Window.prototype.mouseDown = function() {
 
-    console.log(dragObject);
+    var that = this;
+
+    window.addEventListener('mousemove', that.drag, true);
+
+};
+
+/**
+ *
+ * Drags the selected object around by following the mouse
+ * @memberof Window.prototype
+ * @param {event} event that triggers this function
+ * */
+Window.prototype.drag = function(event) {
+
+    event.stopPropagation();
+
+    dragObject.style.position = "absolute";
+    dragObject.style.top = event.clientY + "px";
+    dragObject.style.left = event.clientX + "px";
+
+};
+
+/**
+ *
+ * Drops the selected element
+ * @memberof Window.prototype
+ * */
+Window.prototype.drop = function() {
+
+    var that = this;
+
+    window.removeEventListener('mousemove', that.drag, true);
 
 };
 
 module.exports = Window;
-
