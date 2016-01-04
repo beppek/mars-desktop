@@ -14,8 +14,9 @@ var $ = require('jQuery');
  *
  * This module opens a new app window
  * @constructor
+ * @param {string} name of app that opens in the window
  * */
-function OpenWindow(app) {
+function Window(app) {
 
     var template = document.querySelector("#windowTemplate");
     var tClone = document.importNode(template.content, true);
@@ -32,7 +33,28 @@ function OpenWindow(app) {
 
     });
 
+    this.addListeners();
+
 }
 
-module.exports = OpenWindow;
+Window.prototype.addListeners = function() {
+
+    $(".window").mousedown(function(event) {
+
+        var dragObject = event.target;
+        this.drag(dragObject);
+
+    }.bind(this));
+
+    window.addEventListener("mouseup", this.mouseUp, false);
+
+};
+
+Window.prototype.drag = function(dragObject) {
+
+    console.log(dragObject);
+
+};
+
+module.exports = Window;
 
