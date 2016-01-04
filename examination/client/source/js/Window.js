@@ -8,8 +8,9 @@
 "use strict";
 
 //Requires
-var $ = require('jQuery');
+var $ = require("jQuery");
 
+//Global variables
 var dragObject;
 var xPos;
 var yPos;
@@ -22,12 +23,7 @@ var yPos;
  * */
 function Window(app) {
 
-    $(document).on('DOMNodeInserted', function(e) {
-        if (e.target.className === 'window') {
-            e.target.style.zIndex = 3;
-        }
-    });
-
+    //
     var template = document.querySelector("#windowTemplate");
     var tClone = document.importNode(template.content, true);
 
@@ -54,12 +50,23 @@ function Window(app) {
  * */
 Window.prototype.addListeners = function() {
 
-    var that = this;
+    var _this = this;
+
+    var statusbar = document.querySelectorAll(".statusbar");
 
     $(".statusbar").mousedown(function(event) {
 
-        dragObject = event.target.parentNode;
-        that.mouseDown(event);
+        if (event.target.className === "statusbar") {
+
+            dragObject = event.target.parentNode;
+            _this.mouseDown(event);
+
+        }else if (event.target.className === "appIcon" || event.target.className === "closeWindow") {
+
+            dragObject = event.target.parentNode.parentNode;
+            _this.mouseDown(event);
+
+        }
 
     });
 
@@ -67,13 +74,12 @@ Window.prototype.addListeners = function() {
 
         $(this).css("z-index", 2);
         $(this).siblings(".window").css("z-index", 1);
-        console.log(this);
 
     });
 
     window.addEventListener("mouseup", function() {
 
-        that.drop();
+        _this.drop();
 
     }, false);
 
@@ -86,12 +92,12 @@ Window.prototype.addListeners = function() {
  * */
 Window.prototype.mouseDown = function(event) {
 
-    var that = this;
+    var _this = this;
 
     xPos = event.clientX - dragObject.offsetLeft;
     yPos = event.clientY - dragObject.offsetTop;
 
-    window.addEventListener('mousemove', that.drag, true);
+    window.addEventListener("mousemove", _this.drag, true);
 
 };
 
@@ -118,9 +124,9 @@ Window.prototype.drag = function(event) {
  * */
 Window.prototype.drop = function() {
 
-    var that = this;
+    var _this = this;
 
-    window.removeEventListener('mousemove', that.drag, true);
+    window.removeEventListener("mousemove", _this.drag, true);
 
 };
 
