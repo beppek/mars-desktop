@@ -22,7 +22,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     left: 0;
     height: 100vh;
     box-shadow: 2px 0 5px 1px rgba(25,25,25,0.5);
-    background-color: steelblue;
+    background-color: firebrick;
 }
 #menu ul {
     width: 150px;
@@ -116,7 +116,8 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     width: 100%;
     background-color: crimson;
-    background-image: url("../image/railwaybridge-oz.jpg");
+    /*background-image: url("../image/railwaybridge-oz.jpg");*/
+    background-image: url("../image/bg.jpg");
 }
 
 /*Window styles*/

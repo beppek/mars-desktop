@@ -10,21 +10,30 @@
 //requires
 var $ = require("jQuery");
 var OpenWindow = require("./Window");
+var Memory = require("./Memory");
+var Chat = require("./Chat");
+var About = require("./About");
 
 //event listeners
 $(document).ready(function() {
 
+    //$(document).on("DOMNodeInserted", function(e) {
+    //    if (e.target.className === "window") {
+    //
+    //    }
+    //});
+
     $("#startMemory").click(function() {
 
         new OpenWindow("Memory");
-        console.log("Memory time!");
+        //new Memory();
 
     });
 
     $("#startChat").click(function() {
 
         new OpenWindow("Chat");
-        console.log("Chat away!");
+        //new Chat();
 
     });
 
@@ -32,6 +41,13 @@ $(document).ready(function() {
 
         new OpenWindow("MyApp");
         console.log("Nonono you don't get to see it yet!");
+
+    });
+
+    $("#showAbout").click(function() {
+
+        new OpenWindow("About");
+        //new About();
 
     });
 

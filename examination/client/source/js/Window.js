@@ -9,14 +9,18 @@
 
 //Requires
 var $ = require("jQuery");
+var About = require("./About");
+var Memory = require("./Memory");
+var Chat = require("./Chat");
 
 //Global variables
 var dragObject;
 var xPos;
 var yPos;
 var zCount = 1;
-var top = 0;
-var left = 150;
+var top = 10;
+var left = 160;
+var newWindow;
 
 /**
  *
@@ -26,13 +30,17 @@ var left = 150;
  * */
 function Window(app) {
 
+    var _this = this;
+
     //Check for inserted element to the DOM and assign z-index to 3 to bring to front
     $(document).on("DOMNodeInserted", function(e) {
         if (e.target.className === "window") {
+            newWindow = e.target;
+            //_this.initApp(app, e.target);
             var windows = $(".window");
             if (windows.length === 1) {
-                top = 0;
-                left = 150;
+                top = 10;
+                left = 160;
             }
             zCount += 1;
             e.target.style.zIndex = zCount;
@@ -61,6 +69,7 @@ function Window(app) {
     });
 
     this.addListeners();
+    this.initApp(app, newWindow);
 
 }
 
@@ -104,6 +113,23 @@ Window.prototype.addListeners = function() {
         _this.drop();
 
     }, false);
+
+};
+
+Window.prototype.initApp = function(app, currentWin) {
+
+    switch (app) {
+
+        case "About":
+            new About(currentWin);
+            break;
+        case "Chat":
+            new Chat(currentWin);
+            break;
+        case "Memory":
+            new Memory(currentWin);
+
+    }
 
 };
 
