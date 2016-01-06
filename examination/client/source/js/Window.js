@@ -14,6 +14,9 @@ var $ = require("jQuery");
 var dragObject;
 var xPos;
 var yPos;
+var zCount = 1;
+var top = 0;
+var left = 150;
 
 /**
  *
@@ -23,7 +26,22 @@ var yPos;
  * */
 function Window(app) {
 
-    //
+    //Check for inserted element to the DOM and assign z-index to 3 to bring to front
+    $(document).on("DOMNodeInserted", function(e) {
+        if (e.target.className === "window") {
+            var windows = $(".window");
+            if (windows.length === 1) {
+                top = 0;
+                left = 150;
+            }
+            zCount += 1;
+            e.target.style.zIndex = zCount;
+            e.target.style.top = top + "px";
+            e.target.style.left = left + "px";
+        }
+    });
+
+    //Create window from template
     var template = document.querySelector("#windowTemplate");
     var tClone = document.importNode(template.content, true);
 
@@ -32,6 +50,9 @@ function Window(app) {
     appIcon.appendChild(document.createTextNode(app));
 
     $("#workspace").append(tClone);
+
+    top += 10;
+    left += 10;
 
     $(".closeWindow").click(function() {
 
@@ -72,8 +93,9 @@ Window.prototype.addListeners = function() {
 
     $(".window").mousedown(function() {
 
-        $(this).css("z-index", 2);
-        $(this).siblings(".window").css("z-index", 1);
+        zCount += 1;
+        $(this).css("z-index", zCount);
+        //$(this).siblings(".window").css("z-index", 1);
 
     });
 
@@ -109,9 +131,7 @@ Window.prototype.mouseDown = function(event) {
  * */
 Window.prototype.drag = function(event) {
 
-    event.stopPropagation();
-
-    dragObject.style.position = "absolute";
+    dragObject.style.opacity = 0.9;
     dragObject.style.top = (event.clientY - yPos) + "px";
     dragObject.style.left = (event.clientX - xPos) + "px";
 
@@ -126,7 +146,13 @@ Window.prototype.drop = function() {
 
     var _this = this;
 
-    window.removeEventListener("mousemove", _this.drag, true);
+    if (typeof dragObject !== "undefined") {
+
+        dragObject.style.opacity = 1;
+
+        window.removeEventListener("mousemove", _this.drag, true);
+
+    }
 
 };
 
