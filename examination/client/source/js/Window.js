@@ -56,7 +56,10 @@ function Window(app) {
 
     var appIcon = tClone.querySelectorAll(".appIcon")[0];
 
-    appIcon.appendChild(document.createTextNode(app));
+    var iconImg = document.createElement("img");
+    iconImg.setAttribute("src", "image/" + app + ".png");
+    appIcon.appendChild(iconImg);
+    //appIcon.appendChild(document.createTextNode(app));
 
     $("#workspace").append(tClone);
 
@@ -121,13 +124,13 @@ Window.prototype.initApp = function(app, currentWin) {
 
     switch (app) {
 
-        case "About":
+        case "about":
             new About(currentWin);
             break;
-        case "Chat":
+        case "chat":
             new Chat(currentWin);
             break;
-        case "Memory":
+        case "memory":
             new Memory(currentWin, 4, 4);
 
     }

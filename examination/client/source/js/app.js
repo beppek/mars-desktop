@@ -25,28 +25,28 @@ $(document).ready(function() {
 
     $("#startMemory").click(function() {
 
-        new OpenWindow("Memory");
+        new OpenWindow("memory");
         //new Memory();
 
     });
 
     $("#startChat").click(function() {
 
-        new OpenWindow("Chat");
+        new OpenWindow("chat");
         //new Chat();
 
     });
 
     $("#startMyApp").click(function() {
 
-        new OpenWindow("MyApp");
+        new OpenWindow("game");
         console.log("Nonono you don't get to see it yet!");
 
     });
 
     $("#showAbout").click(function() {
 
-        new OpenWindow("About");
+        new OpenWindow("about");
         //new About();
 
     });

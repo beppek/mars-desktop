@@ -173,6 +173,11 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     line-height: 35px ;
     color: aliceblue;
 }
+.appIcon img {
+    width: 30px;
+    margin: 2.5px;
+    background: none;
+}
 .winWorkSpace {
     margin: 10px;
 }
@@ -198,7 +203,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 
 /*Styles for the memory window*/
-.memoryWindow img {
+.memoryWindow .winWorkSpace img {
     width: 60px;
     margin: 10px;
     padding: 10px;
