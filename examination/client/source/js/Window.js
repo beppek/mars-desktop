@@ -26,23 +26,23 @@ var newWindow;
  *
  * This module opens a new app window
  * @constructor
- * @param {string} name of app that opens in the window
+ * @param {string} app - name of app that opens in the window
  * */
 function Window(app) {
-
-    var _this = this;
 
     //Check for inserted element to the DOM and assign z-index to bring to front
     //position top and left
     $(document).on("DOMNodeInserted", function(e) {
         if (e.target.className === "window") {
             newWindow = e.target;
+
             //_this.initApp(app, e.target);
             var windows = $(".window");
             if (windows.length === 1) {
                 top = 20;
                 left = 170;
             }
+
             zCount += 1;
             e.target.style.zIndex = zCount;
             e.target.style.top = top + "px";
@@ -59,7 +59,6 @@ function Window(app) {
     var iconImg = document.createElement("img");
     iconImg.setAttribute("src", "image/" + app + ".png");
     appIcon.appendChild(iconImg);
-    //appIcon.appendChild(document.createTextNode(app));
 
     $("#workspace").append(tClone);
 
@@ -108,7 +107,6 @@ Window.prototype.addListeners = function() {
 
         zCount += 1;
         $(this).css("z-index", zCount);
-        //$(this).siblings(".window").css("z-index", 1);
 
     });
 
@@ -120,6 +118,13 @@ Window.prototype.addListeners = function() {
 
 };
 
+/**
+ *
+ * Initializes the app that will run in the window
+ * @memberof Window.prototype
+ * @param {string} app - the app that will start
+ * @param {object} currentWin - the window that just opened
+ * */
 Window.prototype.initApp = function(app, currentWin) {
 
     switch (app) {
@@ -131,7 +136,7 @@ Window.prototype.initApp = function(app, currentWin) {
             new Chat(currentWin);
             break;
         case "memory":
-            new Memory(currentWin, 4, 4);
+            Memory(currentWin, 4, 4);
 
     }
 
@@ -139,8 +144,9 @@ Window.prototype.initApp = function(app, currentWin) {
 
 /**
  *
- * Fires an eventlistener to listen for the mouse to move
+ * Fires an event listener to listen for the mouse to move
  * @memberof Window.prototype
+ * @param {object} event - the mousedown event that triggered the function
  * */
 Window.prototype.mouseDown = function(event) {
 
@@ -157,7 +163,7 @@ Window.prototype.mouseDown = function(event) {
  *
  * Drags the selected object around by following the mouse
  * @memberof Window.prototype
- * @param {event} event that triggers this function
+ * @param {object} event that triggers this function
  * */
 Window.prototype.drag = function(event) {
 
