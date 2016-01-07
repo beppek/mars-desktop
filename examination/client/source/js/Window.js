@@ -128,7 +128,7 @@ Window.prototype.initApp = function(app, currentWin) {
             new Chat(currentWin);
             break;
         case "Memory":
-            new Memory(currentWin);
+            new Memory(currentWin, 4, 4);
 
     }
 
