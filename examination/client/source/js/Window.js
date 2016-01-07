@@ -18,8 +18,8 @@ var dragObject;
 var xPos;
 var yPos;
 var zCount = 1;
-var top = 10;
-var left = 160;
+var top = 20;
+var left = 170;
 var newWindow;
 
 /**
@@ -32,15 +32,16 @@ function Window(app) {
 
     var _this = this;
 
-    //Check for inserted element to the DOM and assign z-index to 3 to bring to front
+    //Check for inserted element to the DOM and assign z-index to bring to front
+    //position top and left
     $(document).on("DOMNodeInserted", function(e) {
         if (e.target.className === "window") {
             newWindow = e.target;
             //_this.initApp(app, e.target);
             var windows = $(".window");
             if (windows.length === 1) {
-                top = 10;
-                left = 160;
+                top = 20;
+                left = 170;
             }
             zCount += 1;
             e.target.style.zIndex = zCount;
@@ -59,8 +60,8 @@ function Window(app) {
 
     $("#workspace").append(tClone);
 
-    top += 10;
-    left += 10;
+    top += 15;
+    left += 15;
 
     $(".closeWindow").click(function() {
 

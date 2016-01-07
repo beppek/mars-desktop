@@ -10,7 +10,7 @@ html, body {
 p, a, li, h1, h2, h3, h4, h5, h6 {
     font-family: "Lucida Console", monospace;
     color: aliceblue;
-    font-size: 1.5rem;
+    font-size: 15px;
 }
 
 /*Menu styles*/
@@ -22,7 +22,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     left: 0;
     height: 100vh;
     box-shadow: 2px 0 5px 1px rgba(25,25,25,0.5);
-    background-color: firebrick;
+    background-color: rgba(165,65,45,0.8);
 }
 #menu ul {
     width: 150px;
@@ -50,10 +50,10 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .1s ease-in-out;
-    -moz-transition: .1s ease-in-out;
-    -o-transition: .1s ease-in-out;
-    transition: .1s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
     cursor: pointer;
 }
 #menuToggle span {
@@ -69,10 +69,10 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .1s ease-in-out;
-    -moz-transition: .1s ease-in-out;
-    -o-transition: .1s ease-in-out;
-    transition: .1s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 #menuToggle span:nth-child(1) {
     top: 15px;
@@ -126,8 +126,8 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     width: 500px;
     height: 500px;
     position: absolute;
-    top: 0;
-    left: 150px;
+    top: 20px;
+    left: 170px;
     border: none;
     margin: 0;
     padding: 0;
@@ -147,7 +147,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     color: aliceblue;
     position: absolute;
     right: 0px;
-    font-size: 19px;
+    font-size: 20px;
     line-height: 25px;
     padding: 5px 15px;
     background: linear-gradient(lightsalmon, tomato);
@@ -165,4 +165,19 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .winWorkSpace {
     margin: 10px;
+}
+
+/*About me window styles*/
+.aboutMe {
+    font-family: "Lucida Console", monospace;
+    background: rgba(25,25,25,0.9);
+    color: aliceblue;
+    width: 300px;
+    height: 300px;
+    /*opacity: 0.9;*/
+}
+
+.createdBy {
+    font-size: 12px!important;
+    color: aliceblue!important;
 }

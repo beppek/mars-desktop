@@ -53,9 +53,9 @@ $(document).ready(function() {
 
     $("#menuToggle").click(function(event) {
 
-        $(this).toggleClass('open');
         event.preventDefault();
-        $(".menuList").toggle();
+        $(".menuList").toggle(300);
+        $(this).toggleClass('open');
 
     });
 

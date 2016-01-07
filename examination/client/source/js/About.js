@@ -7,10 +7,27 @@
 
 "use strict";
 
+
 function About(currentWin) {
 
+    currentWin.classList.add("aboutMe");
+
     var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
-    winWorkSpace.appendChild(document.createTextNode("Skapad av Beppe Karlsson"));
+
+    //Create window from template
+    var template = document.querySelector("#aboutContent");
+    var tClone = document.importNode(template.content, true);
+
+    //var createdByPTag = document.createElement("p");
+    //var createdBy = document.createTextNode("- This personal web desktop app was created by Beppe Karlsson for the final assignment of 1DV022 - Klientbaserad Webbprogrammering.");
+    //
+    //createdByPTag.classList.add("createdBy");
+    //
+    //createdByPTag.appendChild(createdBy);
+
+    winWorkSpace.appendChild(tClone);
+
+
 
 }
 
