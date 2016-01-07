@@ -5,9 +5,11 @@
  *
  * */
 
-"use strict";
+"use strict"
 
 function Memory(currentWin, rows, cols) {
+
+    var _this = this;
 
     console.log("Memory time!");
 
@@ -15,47 +17,59 @@ function Memory(currentWin, rows, cols) {
     var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
 
     var i;
-    var img;
+    var a;
     var tiles = [];
-    tiles = getPictures(rows, cols);
+
+    tiles = this.getPictures(rows, cols);
 
     var template = document.querySelectorAll("#memoryContent")[0].content.firstElementChild;
 
-    for (i = 0; i < rows * cols; i += 1) {
+    tiles.forEach(function(tile, index) {
 
-        img = document.importNode(template, true);
+        a = document.importNode(template, true);
 
-        winWorkSpace.appendChild(img);
+        winWorkSpace.appendChild(a);
 
-        img.addEventListener("click", function () {
+        a.addEventListener("click", function(event) {
 
-            console.log(i);
+            event.preventDefault();
+
+            var img = event.target.nodeName === "IMG" ? event.target : event.target.firstElementChild;
+
+            _this.turnBrick(tile, index, img);
 
         });
 
-        if ((i + 1) % cols === 0) {
+        if ((index + 1) % cols === 0) {
             winWorkSpace.appendChild(document.createElement("br"));
         }
-    }
-
-    function getPictures(rows, cols) {
-
-        var arr = [];
-        var i;
-        for (i = 1; i <= (rows * cols) / 2; i += 1) {
-            arr.push(i);
-            arr.push(i);
-        }
-
-        for (i = arr.length - 1; i > 0; i -= 1) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
-
-    }
+    });
 
 }
 
+Memory.prototype.getPictures = function(rows, cols) {
+
+    var arr = [];
+    var i;
+    for (i = 1; i <= (rows * cols) / 2; i += 1) {
+        arr.push(i);
+        arr.push(i);
+    }
+
+    for (i = arr.length - 1; i > 0; i -= 1) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    return arr;
+
+};
+
+Memory.prototype.turnBrick = function(tile, index, img) {
+
+    img.src = "image/" + tile + ".png"
+
+};
 module.exports = Memory;
