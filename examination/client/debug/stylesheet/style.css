@@ -130,8 +130,8 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 /*Window styles*/
 .window {
     background: rgba(25,25,25,0.9);
-    width: 450px;
-    height: 500px;
+    width: 250px;
+    height: 250px;
     position: absolute;
     top: 20px;
     left: 170px;
@@ -141,7 +141,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     box-shadow: 1px 2px 3px 3px rgba(25,25,25,0.4);
 }
 .window p {
-    color: rgb(25,25,25);
+    /*color: rgb(25,25,25);*/
     font-size: 12px;
 }
 .statusbar {
@@ -230,6 +230,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .medium {
     height: 300px;
+    width: 450px;
 }
 .small {
     height: 300px;
@@ -246,4 +247,8 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .memorySize a:hover {
     color: steelblue;
+}
+
+.presentScore {
+    color: aliceblue;
 }

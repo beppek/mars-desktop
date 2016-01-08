@@ -7,6 +7,9 @@
 
 "use strict";
 
+//Require
+var $ = require("jQuery");
+
 /**
  * This function creates an instance of the memory game taking 3 parameters
  * @constructor
@@ -135,7 +138,69 @@ function Memory(currentWin, rows, cols) {
                 pairs += 1;
 
                 if (pairs === totalPairs) {
-                    console.log("Yay! Only took: " + tries + " tries!");
+
+                    while (winWorkSpace.firstChild) {
+                        winWorkSpace.removeChild(winWorkSpace.firstChild);
+                    }
+
+                    currentWin.classList.remove("small");
+                    currentWin.classList.remove("medium");
+                    currentWin.classList.remove("large");
+
+                    currentWin.classList.add("selectSize");
+
+                    var template = document.querySelectorAll("#memoryContent")[0].content.lastElementChild;
+                    var div = document.importNode(template, true);
+                    winWorkSpace.appendChild(div);
+                    var text = document.createTextNode("You completed the game in " + tries + " tries!");
+
+                    var p = div.querySelectorAll("p")[0];
+                    p.appendChild(text);
+
+                    var playAgain = div.querySelectorAll("a")[0];
+
+                    playAgain.addEventListener("click", function(event) {
+
+                        while (winWorkSpace.firstChild) {
+                            winWorkSpace.removeChild(winWorkSpace.firstChild);
+                        }
+
+                        event.preventDefault();
+                        var template = document.querySelectorAll("#memoryContent")[0].content.firstElementChild.nextElementSibling;
+                        var div = document.importNode(template, true);
+
+                        currentWin.appendChild(div);
+
+                        var aTags = div.getElementsByTagName("a");
+
+                        $(aTags).click(function(event) {
+
+                            event.preventDefault();
+                            var size = $(this).text();
+
+                            if (size === "Large") {
+
+                                Memory(currentWin, 4, 4);
+                                $(aTags).remove();
+
+                            }else if (size === "Medium") {
+
+                                Memory(currentWin, 2, 4);
+                                $(aTags).remove();
+
+                            }else {
+
+                                Memory(currentWin, 2, 2);
+                                $(aTags).remove();
+
+                            }
+
+                            currentWin.removeChild(div);
+
+                        });
+
+                    });
+
                 }
 
                 setTimeout(function() {

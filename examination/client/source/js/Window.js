@@ -171,6 +171,9 @@ Window.prototype.initApp = function(app, currentWin) {
                     $(aTags).remove();
 
                 }
+
+                currentWin.removeChild(div);
+
             });
 
             break;
