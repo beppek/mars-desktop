@@ -124,14 +124,11 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     padding-left: 150px;
     height: 100vh;
     width: 100%;
-    background-color: crimson;
-    /*background-image: url("../image/railwaybridge-oz.jpg");*/
     background-image: url("../image/bg.jpg");
 }
 
 /*Window styles*/
 .window {
-    /*background: ghostwhite;*/
     background: rgba(25,25,25,0.9);
     width: 450px;
     height: 500px;
@@ -178,8 +175,11 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     margin: 2px;
     background: none;
 }
+.wrapper {
+}
 .winWorkSpace {
-    margin: 10px;
+    display: table;
+    margin: 15px auto;
 }
 
 /*About me window styles*/
@@ -189,6 +189,11 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     color: aliceblue;
     width: 350px;
     height: 470px;
+}
+
+.aboutMe .winWorkSpace {
+    display: block;
+    margin: 10px;
 }
 
 .aboutMe p, .aboutMe a {

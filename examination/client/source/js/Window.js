@@ -130,14 +130,48 @@ Window.prototype.initApp = function(app, currentWin) {
     switch (app) {
 
         case "about":
-            new About(currentWin);
+
+            About(currentWin);
             break;
+
         case "chat":
+
             new Chat(currentWin);
             break;
-        case "memory":
-            Memory(currentWin, 4, 4);
 
+        case "memory":
+
+            var template = document.querySelectorAll("#memoryContent")[0].content.firstElementChild.nextElementSibling;
+            var div = document.importNode(template, true);
+
+            currentWin.appendChild(div);
+
+            var aTags = div.getElementsByTagName("a");
+
+            $(aTags).click(function(event) {
+
+                event.preventDefault();
+                var size = $(this).text();
+
+                if (size === "Large") {
+
+                    Memory(currentWin, 4, 4);
+                    $(aTags).remove();
+
+                }else if (size === "Medium") {
+
+                    Memory(currentWin, 2, 4);
+                    $(aTags).remove();
+
+                }else {
+
+                    Memory(currentWin, 2, 2);
+                    $(aTags).remove();
+
+                }
+            });
+
+            break;
     }
 
 };

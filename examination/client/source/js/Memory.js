@@ -25,8 +25,6 @@ function Memory(currentWin, rows, cols) {
 
     totalPairs = (rows * cols) / 2;
 
-    console.log("Memory time!");
-
     currentWin.classList.add("memoryWindow");
     var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
 
@@ -61,11 +59,16 @@ function Memory(currentWin, rows, cols) {
         }
     });
 
-    function getPictures(rows, cols) {
+    /**
+     *
+     * This function shuffles the array of memory bricks
+     * @function
+     * */
+    function getPictures() {
 
         var arr = [];
         var i;
-        for (i = 1; i <= (rows * cols) / 2; i += 1) {
+        for (i = 1; i <= totalPairs; i += 1) {
             arr.push(i);
             arr.push(i);
         }
@@ -81,6 +84,14 @@ function Memory(currentWin, rows, cols) {
 
     }
 
+    /**
+     *
+     * This function turns the bricks when clicked
+     * taking parameters for tile and image
+     * @function
+     * @param {object} tile - the tile that was clicked
+     * @param {object} img - the image
+     * */
     function turnBrick(tile, img) {
 
         if (turn2) {

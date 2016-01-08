@@ -17,12 +17,6 @@ var About = require("./About");
 //event listeners
 $(document).ready(function() {
 
-    //$(document).on("DOMNodeInserted", function(e) {
-    //    if (e.target.className === "window") {
-    //
-    //    }
-    //});
-
     $("#startMemory").click(function() {
 
         new OpenWindow("memory");
@@ -33,7 +27,6 @@ $(document).ready(function() {
     $("#startChat").click(function() {
 
         new OpenWindow("chat");
-        //new Chat();
 
     });
 
@@ -47,7 +40,6 @@ $(document).ready(function() {
     $("#showAbout").click(function() {
 
         new OpenWindow("about");
-        //new About();
 
     });
 

@@ -7,7 +7,11 @@
 
 "use strict";
 
-
+/**
+ * This function prints the about info from template
+ * @constructor
+ * @param {object} currentWin - the window to display info
+ * */
 function About(currentWin) {
 
     currentWin.classList.add("aboutMe");
@@ -18,16 +22,7 @@ function About(currentWin) {
     var template = document.querySelector("#aboutContent");
     var tClone = document.importNode(template.content, true);
 
-    //var createdByPTag = document.createElement("p");
-    //var createdBy = document.createTextNode("- This personal web desktop app was created by Beppe Karlsson for the final assignment of 1DV022 - Klientbaserad Webbprogrammering.");
-    //
-    //createdByPTag.classList.add("createdBy");
-    //
-    //createdByPTag.appendChild(createdBy);
-
     winWorkSpace.appendChild(tClone);
-
-
 
 }
 
