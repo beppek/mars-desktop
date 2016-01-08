@@ -16,6 +16,18 @@
  * */
 function Memory(currentWin, rows, cols) {
 
+    currentWin.classList.remove("selectSize");
+
+    //Sets size of window for smaller than large
+    if (rows * cols === 16) {
+        currentWin.classList.add("large");
+    }
+    else if (rows * cols === 8) {
+        currentWin.classList.add("medium");
+    }else if (rows * cols === 4) {
+        currentWin.classList.add("small");
+    }
+
     var turn1;
     var turn2;
     var prevTile;

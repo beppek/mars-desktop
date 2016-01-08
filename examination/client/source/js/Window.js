@@ -146,6 +146,8 @@ Window.prototype.initApp = function(app, currentWin) {
 
             currentWin.appendChild(div);
 
+            currentWin.classList.add("selectSize");
+
             var aTags = div.getElementsByTagName("a");
 
             $(aTags).click(function(event) {

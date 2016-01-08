@@ -218,3 +218,32 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .pairedBrick {
     visibility: hidden;
 }
+
+.selectSize {
+    height: 300px;
+    width: 300px;
+}
+
+.large {
+    width: 450px;
+    height: 500px;
+}
+.medium {
+    height: 300px;
+}
+.small {
+    height: 300px;
+    width: 300px;
+}
+
+.memorySize {
+    text-align: center;
+    margin-top: 50px;
+}
+.memorySize a {
+    font-size: 40px;
+    text-decoration: none;
+}
+.memorySize a:hover {
+    color: steelblue;
+}
