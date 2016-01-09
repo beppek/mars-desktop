@@ -1,6 +1,7 @@
 /**
  *
- * @author: beppek
+ * @author: leitet
+ * @author: beppek (edits and addons)
  * @version: 1.0.0
  *
  * */
@@ -137,6 +138,7 @@ function Memory(currentWin, rows, cols) {
                 //found pair
                 pairs += 1;
 
+                //Win condition
                 if (pairs === totalPairs) {
 
                     while (winWorkSpace.firstChild) {
@@ -180,17 +182,17 @@ function Memory(currentWin, rows, cols) {
 
                             if (size === "Large") {
 
-                                Memory(currentWin, 4, 4);
+                                new Memory(currentWin, 4, 4);
                                 $(aTags).remove();
 
                             }else if (size === "Medium") {
 
-                                Memory(currentWin, 2, 4);
+                                new Memory(currentWin, 2, 4);
                                 $(aTags).remove();
 
                             }else {
 
-                                Memory(currentWin, 2, 2);
+                                new Memory(currentWin, 2, 2);
                                 $(aTags).remove();
 
                             }
