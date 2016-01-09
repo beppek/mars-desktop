@@ -70,6 +70,7 @@ Chat.prototype.connect = function() {
         this.socket.addEventListener("message", function(event) {
 
             var message = JSON.parse(event.data);
+
             if (message.type === "message") {
                 this.printMessage(message);
             }
@@ -90,7 +91,7 @@ Chat.prototype.sendMessage = function(text) {
         key: config.key
     };
 
-    this.connect().then(function() {
+    this.connect().then(function(socket) {
         socket.send(JSON.stringify(data));
     }).catch(function(error) {
         console.log("Something went wrong", error);
@@ -106,7 +107,7 @@ Chat.prototype.printMessage = function(message) {
     var messageDiv = document.importNode(template.content.firstElementChild, true);
 
     messageDiv.querySelectorAll(".text")[0].textContent = message.data;
-    messageDiv.querySelectorAll(".text")[0].textContent = message.username;
+    messageDiv.querySelectorAll(".author")[0].textContent = message.username;
 
     this.chatDiv.querySelectorAll(".messages")[0].appendChild(messageDiv);
 
