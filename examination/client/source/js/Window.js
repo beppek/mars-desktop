@@ -136,7 +136,11 @@ Window.prototype.initApp = function(app, currentWin) {
 
         case "chat":
 
-            new Chat(currentWin);
+            var chat = new Chat(currentWin);
+            chat.connect().then(function(socket) {
+
+
+            });
             break;
 
         case "memory":
