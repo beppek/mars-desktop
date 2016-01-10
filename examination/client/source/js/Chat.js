@@ -251,6 +251,10 @@ Chat.prototype.printMessage = function(message) {
     messageDiv.querySelectorAll(".time")[0].textContent = timeStamp;
     this.chatDiv.querySelectorAll(".messages")[0].appendChild(messageDiv);
 
+    var messagesDiv = this.chatDiv.firstElementChild;
+
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
 };
 
 /**
