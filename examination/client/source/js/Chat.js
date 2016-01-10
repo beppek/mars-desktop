@@ -41,6 +41,29 @@ function Chat(currentWin) {
     currentWin.classList.add("large");
     var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
 
+    //Check if menu already present before adding
+    if (!currentWin.querySelectorAll(".winMenu")[0]) {
+
+        //Insert window menu and populate
+        var menuTemplate = currentWin.querySelector("#winMenu");
+        var menuDiv = document.importNode(menuTemplate.content.firstElementChild, true);
+
+        var menuItem = menuDiv.querySelectorAll(".winMenuItem")[0];
+
+        menuItem.textContent = "Change Username";
+
+        menuItem.addEventListener("click", function(event) {
+
+            event.preventDefault();
+            this.selectUsername(currentWin);
+            return;
+
+        }.bind(this));
+
+        winWorkSpace.parentNode.insertBefore(menuDiv, winWorkSpace);
+
+    }
+
     //Find template and import
     var template = document.querySelector("#chatContent");
     this.chatDiv = document.importNode(template.content.firstElementChild, true);
@@ -72,9 +95,25 @@ function Chat(currentWin) {
  * */
 Chat.prototype.selectUsername = function(currentWin) {
 
+    //If username is set remove to set new as the function was called to change user name
+    if (localStorage.username) {
+
+        localStorage.removeItem("username");
+
+    }
+
+    //Revert to default window size
+    currentWin.classList.remove("large");
+
+    var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
+
+    //Remove content from window
+    while (winWorkSpace.firstChild) {
+        winWorkSpace.removeChild(winWorkSpace.firstChild);
+    }
+
     //Find template and div to clone into
     var template = document.querySelector("#chatContent");
-    var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
 
     var selectUsername = document.importNode(template.content.lastElementChild, true);
 
@@ -143,7 +182,6 @@ Chat.prototype.connect = function() {
 
             //Ignore "heartbeat" from server
             if (message.type === "message") {
-
 
                 this.printMessage(message);
 
@@ -222,7 +260,7 @@ Chat.prototype.printMessage = function(message) {
  * */
 Chat.prototype.timeStamp = function() {
 
-    var weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
     var dateObject = new Date();

@@ -14,6 +14,14 @@
 
                     </div>
                 </div>
+                <template id="winMenu">
+                    <div class="winMenu">
+                        <span>Settings</span>
+                        <div class="dropdown-content">
+                            <a class="winMenuItem" href="#"></a>
+                        </div>
+                    </div>
+                </template>
             </div>
         </template>
         <template id="memoryContent">
@@ -99,10 +107,10 @@
                     <textarea name="messageText" placeholder="Press Enter to send" class="messageArea"></textarea>
                 </div>
             </div>
-            <div id="selectUsername">
-                <p>Wanna chat away? Go ahead, select a unique username and you are good to go!</p>
-                <form action="GET">
-                    <input type="text" name="username" id="username">
+            <div class="selectUsername">
+                <p>Feeling chatty? Create a unique username below and you are good to go!</p>
+                <form action="#">
+                    <input title="username" type="text" name="username" id="username">
                     <input type="submit" id="submitBtn">
                 </form>
             </div>
@@ -116,7 +124,7 @@
                 <a href="http://codepen.io/designcouch/pen/Atyop" target="_blank">Codepen</a> by Jesse Couch<br>
             </p>
             <p>
-                <stong>Menu Icons</stong><br>
+                <strong>Menu Icons</strong><br>
                 Memory: Greg Pabst<br>
                 Chat: Mackey Guenther<br>
                 Game: Edward Boatman<br>
@@ -137,7 +145,6 @@
     </head>
     <body>
         <div id="menu">
-            <!--<p><a href="#" id="menuToggle">X</a></p>-->
             <div id="menuToggle">
                 <span></span>
                 <span></span>
