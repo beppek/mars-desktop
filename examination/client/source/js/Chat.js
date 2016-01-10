@@ -122,13 +122,17 @@ Chat.prototype.selectUsername = function(currentWin) {
 
         event.preventDefault();
 
-        //Set username in local storage
-        localStorage.setItem("username", event.target.firstElementChild.value);
+        if (event.target.firstElementChild.value.trim() !== "") {
 
-        winWorkSpace.removeChild(selectUsername);
+            //Set username in local storage and get rid of trailing white spaces
+            localStorage.setItem("username", event.target.firstElementChild.value.trim());
 
-        //Call constructor
-        new Chat(currentWin);
+            winWorkSpace.removeChild(selectUsername);
+
+            //Call constructor
+            new Chat(currentWin);
+
+        }
 
     }.bind(this));
 

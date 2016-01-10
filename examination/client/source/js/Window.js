@@ -12,6 +12,7 @@ var $ = require("jQuery");
 var About = require("./About");
 var Memory = require("./Memory");
 var Chat = require("./Chat");
+var Destination = require("./Destination");
 
 //Global variables
 var dragObject;
@@ -36,7 +37,6 @@ function Window(app) {
         if (e.target.className === "window") {
             newWindow = e.target;
 
-            //_this.initApp(app, e.target);
             var windows = $(".window");
             if (windows.length === 1) {
                 top = 20;
@@ -180,6 +180,11 @@ Window.prototype.initApp = function(app, currentWin) {
             });
 
             break;
+
+        case "travel":
+
+            new Destination(currentWin);
+
     }
 
 };

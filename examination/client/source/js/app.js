@@ -20,7 +20,6 @@ $(document).ready(function() {
     $("#startMemory").click(function() {
 
         new OpenWindow("memory");
-        //new Memory();
 
     });
 
@@ -32,7 +31,7 @@ $(document).ready(function() {
 
     $("#startMyApp").click(function() {
 
-        new OpenWindow("game");
+        new OpenWindow("travel");
         console.log("Nonono you don't get to see it yet!");
 
     });
@@ -47,7 +46,7 @@ $(document).ready(function() {
 
         event.preventDefault();
         $(".menuList").toggle(300);
-        $(this).toggleClass('open');
+        $(this).toggleClass("open");
 
     });
 

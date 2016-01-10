@@ -170,24 +170,29 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     background: none;
 }
 .winMenu {
-    /*text-align: right;*/
     position: relative;
     display: inline-block;
     width: 100%;
-    background-color: steelblue;
+    background-color: rgb(20,20,20);
     height: 20px;
     line-height: 20px;
 }
 .winMenu span {
+    color: aliceblue;
+    font-family: "Lucida Console", monospace;
     margin-left: 15px;
+    cursor: pointer;
+}
+
+.winMenu a {
+    text-decoration: none;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     top: 20px;
-    /*right: 0;*/
-    background-color: rgba(25,25,25,0.8);
+    background-color: rgb(20,20,20);
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
@@ -355,4 +360,22 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .selectUsername #submitBtn:hover {
     background-color: rgba(165,65,45,0.8);
+}
+
+/*Styles for my app*/
+.destinationWindow {
+    width: 600px;
+    height: 600px;
+    background-image: url("../image/durbar-square.jpg");
+}
+
+.box-wrapper {
+    width: 450px;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(25,25,25,0.8);
+    box-shadow: 2px -2px 5px 1px rgba(25,25,25,0.5);
+    padding: 15px;
 }
