@@ -37,11 +37,8 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 #menuToggle {
     line-height: 40px;
-    /*width: 10px;*/
-    /*height: 20px;*/
     position: absolute;
     padding: 35px 35px;
-    /*background-color: rgba(25,25,25,0.8);*/
     top: 25px;
     left: 40px;
     border-radius: 5px;
@@ -140,10 +137,6 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     padding: 0;
     box-shadow: 1px 2px 3px 3px rgba(25,25,25,0.4);
 }
-.window p {
-    /*color: rgb(25,25,25);*/
-    /*font-size: 12px;*/
-}
 .statusbar {
     background: linear-gradient(rgb(100,100,100), rgb(25,25,25));
     height: 35px;
@@ -178,7 +171,6 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .wrapper {
 }
 .winWorkSpace {
-    /*position: absolute;*/
     display: table;
     margin: 0 auto;
 }
@@ -285,10 +277,14 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     width: auto;
     float: left;
     display: block;
+    margin-bottom: 3px;
+}
+.message .time {
+    margin-top: 0;
+    font-size: 12px;
+    clear: both;
 }
 .messageTextDiv {
-    /*left: 50%;*/
-    /*display: inline-block;*/
     position: absolute;
     left: 0;
     right: 0;
@@ -296,8 +292,6 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     background-color: rgba(165,65,45,0.8);
 }
 .messageArea {
-    /*position: relative;*/
-    /*left: -50%;*/
     display: block;
     width: 420px;
     height: 70px;
@@ -310,7 +304,9 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .me .text {
     border-radius: 5px 0 5px 5px;
+    float: right;
 }
+.m
 #selectUsername {
     margin: 15px;
 }

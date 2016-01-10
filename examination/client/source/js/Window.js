@@ -139,7 +139,6 @@ Window.prototype.initApp = function(app, currentWin) {
             var chat = new Chat(currentWin);
             chat.connect().then(function(socket) {
 
-
             });
             break;
 

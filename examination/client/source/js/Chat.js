@@ -21,7 +21,7 @@ function Chat(currentWin) {
 
     this.socket = null;
 
-    localStorage.removeItem("username");
+    //localStorage.removeItem("username");
 
     //Checks if username is set in local storage
     if (localStorage.username) {
@@ -144,6 +144,7 @@ Chat.prototype.connect = function() {
             //Ignore "heartbeat" from server
             if (message.type === "message") {
 
+
                 this.printMessage(message);
 
             }
@@ -204,10 +205,34 @@ Chat.prototype.printMessage = function(message) {
 
     }
 
-    //Print username and message, insert into DOM
+    var timeStamp = this.timeStamp();
+
+    //Print username, message and timestamp, insert into DOM
     messageDiv.querySelectorAll(".author")[0].textContent = message.username;
     messageDiv.querySelectorAll(".text")[0].textContent = message.data;
+    messageDiv.querySelectorAll(".time")[0].textContent = timeStamp;
     this.chatDiv.querySelectorAll(".messages")[0].appendChild(messageDiv);
+
+};
+
+/**
+ *
+ * This function returns a timestamp for the message
+ * @memberof Chat.prototype
+ * */
+Chat.prototype.timeStamp = function() {
+
+    var weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    var dateObject = new Date();
+    var weekday = weekDays[dateObject.getDay()];
+    var month = months[dateObject.getMonth()];
+    var date = dateObject.getDate();
+    var hour = dateObject.getHours();
+    var minute = dateObject.getMinutes();
+
+    return weekday + " " + month + " " + date + ", " + hour + ":" + minute;
 
 };
 
