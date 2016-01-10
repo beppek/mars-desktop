@@ -192,6 +192,7 @@ function Memory(currentWin, rows, cols) {
                             event.preventDefault();
                             var size = $(this).text();
 
+                            //Compare to find size to play
                             if (size === "Large") {
 
                                 new Memory(currentWin, 4, 4);
@@ -209,6 +210,7 @@ function Memory(currentWin, rows, cols) {
 
                             }
 
+                            //Remove div after select
                             winWorkSpace.removeChild(div);
 
                         });
@@ -217,6 +219,7 @@ function Memory(currentWin, rows, cols) {
 
                 }
 
+                //Timeout function to hide paired bricks
                 setTimeout(function() {
 
                     turn1.parentNode.classList.add("pairedBrick");
@@ -229,6 +232,7 @@ function Memory(currentWin, rows, cols) {
 
             }else {
 
+                //Timeout function to turn bricks back around
                 setTimeout(function() {
 
                     turn1.src = "image/0.png";

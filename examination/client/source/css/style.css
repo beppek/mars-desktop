@@ -182,9 +182,6 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     display: table;
     margin: 0 auto;
 }
-.winWorkSpace h5 {
-    margin-top: 10px;
-}
 
 /*About me window styles*/
 .aboutMe {
@@ -203,6 +200,10 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .aboutMe p, .aboutMe a {
     font-size: 13px!important;
     color: aliceblue!important;
+}
+
+.aboutMe h5 {
+    margin-top: 15px;
 }
 
 .aboutMe h6 {
@@ -309,4 +310,27 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .me .text {
     border-radius: 5px 0 5px 5px;
+}
+#selectUsername {
+    margin: 15px;
+}
+#selectUsername #username {
+    width: 215px;
+    margin: 20px auto;
+    height: 20px;
+    font-family: "Lucida Console", monospace;
+}
+#selectUsername #submitBtn {
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    display: block;
+    font-family: "Lucida Console", monospace;
+    cursor: pointer;
+    background-color: steelblue;
+    border: none;
+
+}
+#selectUsername #submitBtn:hover {
+    background-color: rgba(165,65,45,0.8);
 }
