@@ -142,7 +142,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .window p {
     /*color: rgb(25,25,25);*/
-    font-size: 12px;
+    /*font-size: 12px;*/
 }
 .statusbar {
     background: linear-gradient(rgb(100,100,100), rgb(25,25,25));
@@ -178,8 +178,12 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .wrapper {
 }
 .winWorkSpace {
+    /*position: absolute;*/
     display: table;
-    margin: 15px auto;
+    margin: 0 auto;
+}
+.winWorkSpace h5 {
+    margin-top: 10px;
 }
 
 /*About me window styles*/
@@ -208,11 +212,14 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 
 /*Styles for the memory window*/
-.memoryWindow .winWorkSpace img {
+.winWorkSpace img {
     width: 60px;
     margin: 10px;
     padding: 10px;
     background-color: rgba(165,65,45,0.8);
+}
+.memoryGame {
+    margin-top: 20px;
 }
 
 .pairedBrick {
@@ -251,4 +258,55 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 
 .presentScore {
     color: aliceblue;
+    margin: 0 15px
+}
+
+/*Chat style*/
+.messages {
+    height: 360px;
+    overflow: auto;
+}
+.messages p {
+    margin: 15px;
+}
+.message {
+    clear: both;
+}
+.message .author {
+    margin-bottom: 0;
+    clear: both;
+}
+.message .text {
+    margin-top: 0;
+    background-color: steelblue;
+    border-radius: 0 5px 5px 5px;
+    padding: 10px;
+    width: auto;
+    float: left;
+    display: block;
+}
+.messageTextDiv {
+    /*left: 50%;*/
+    /*display: inline-block;*/
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(165,65,45,0.8);
+}
+.messageArea {
+    /*position: relative;*/
+    /*left: -50%;*/
+    display: block;
+    width: 420px;
+    height: 70px;
+    border: none;
+    margin: 15px auto 15px;
+}
+.me {
+    float: right;
+    text-align: right;
+}
+.me .text {
+    border-radius: 5px 0 5px 5px;
 }

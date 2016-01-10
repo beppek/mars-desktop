@@ -13,6 +13,7 @@ var config = require("./config.json");
 function Chat(currentWin) {
 
     this.socket = null;
+    this.username = "Olle";
 
     currentWin.classList.add("large");
 
@@ -32,7 +33,8 @@ function Chat(currentWin) {
 
     }.bind(this));
 
-    currentWin.appendChild(this.chatDiv);
+    var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
+    winWorkSpace.appendChild(this.chatDiv);
 
 }
 
@@ -86,7 +88,7 @@ Chat.prototype.sendMessage = function(text) {
     var data = {
         type: "message",
         data: text,
-        username: "Olle",
+        username: this.username,
         channel: "",
         key: config.key
     };
@@ -106,8 +108,13 @@ Chat.prototype.printMessage = function(message) {
 
     var messageDiv = document.importNode(template.content.firstElementChild, true);
 
-    messageDiv.querySelectorAll(".text")[0].textContent = message.data;
+    //Assumes username is unique
+    if (message.username === this.username) {
+        messageDiv.classList.add("me");
+    }
+
     messageDiv.querySelectorAll(".author")[0].textContent = message.username;
+    messageDiv.querySelectorAll(".text")[0].textContent = message.data;
 
     this.chatDiv.querySelectorAll(".messages")[0].appendChild(messageDiv);
 

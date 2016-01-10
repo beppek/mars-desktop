@@ -43,6 +43,7 @@ function Memory(currentWin, rows, cols) {
 
     currentWin.classList.add("memoryWindow");
     var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
+    winWorkSpace.classList.add("memoryGame");
 
     var a;
     var tiles = getPictures(rows, cols);
@@ -141,16 +142,20 @@ function Memory(currentWin, rows, cols) {
                 //Win condition
                 if (pairs === totalPairs) {
 
+                    //Remove content from window
                     while (winWorkSpace.firstChild) {
                         winWorkSpace.removeChild(winWorkSpace.firstChild);
                     }
 
+                    //Remove size class from window
                     currentWin.classList.remove("small");
                     currentWin.classList.remove("medium");
                     currentWin.classList.remove("large");
 
+                    //Add class
                     currentWin.classList.add("selectSize");
 
+                    //Import template to display result
                     var template = document.querySelectorAll("#memoryContent")[0].content.lastElementChild;
                     var div = document.importNode(template, true);
                     winWorkSpace.appendChild(div);
@@ -163,15 +168,22 @@ function Memory(currentWin, rows, cols) {
 
                     playAgain.addEventListener("click", function(event) {
 
+                        //Remove class
+                        winWorkSpace.classList.remove("memoryGame");
+
+                        //Remove content from window
                         while (winWorkSpace.firstChild) {
                             winWorkSpace.removeChild(winWorkSpace.firstChild);
                         }
 
                         event.preventDefault();
-                        var template = document.querySelectorAll("#memoryContent")[0].content.firstElementChild.nextElementSibling;
-                        var div = document.importNode(template, true);
 
-                        currentWin.appendChild(div);
+                        //Import template to select size/difficulty
+                        var sizeTemplate = document.querySelectorAll("#memoryContent")[0].content.firstElementChild.nextElementSibling;
+                        var div = document.importNode(sizeTemplate, true);
+
+                        //Add template
+                        winWorkSpace.appendChild(div);
 
                         var aTags = div.getElementsByTagName("a");
 
@@ -197,7 +209,7 @@ function Memory(currentWin, rows, cols) {
 
                             }
 
-                            currentWin.removeChild(div);
+                            winWorkSpace.removeChild(div);
 
                         });
 
