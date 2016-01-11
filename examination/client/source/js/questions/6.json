@@ -1,0 +1,14 @@
+{
+
+    "info": "The Nepali economy is still very rural and local meaning a lot of crafts survive until this day. In the image we see a woman walking through the smoke from a pottery burning fire.",
+    "question": "The Nepali make a special kind of usually very colourful fabric from the wool of a special breed of goat, what is that fabric (and the goat breed) called?",
+    "options": [
+        {"option": "Pashmina"},
+        {"option": "Kashmir"},
+        {"option": "Yak"},
+    ],
+    "rightAnswer": "Pashmina",
+    "correct": "Correct",
+    "wrong": "Wrong"
+
+}

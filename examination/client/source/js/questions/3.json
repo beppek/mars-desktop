@@ -1,0 +1,15 @@
+{
+
+    "info": "Buddha's birthplace is often attributed to Nepal even though he spent most of his life in India. Buddha was a sage whose teachings became the foundation of buddhism, however Buddha was not his real name but rather a taken one meaning: \"the enlightened one\".",
+    "question": "What was Buddha's real name?",
+    "options": [
+        {"option": "Confucius"},
+        {"option": "Mahatma Gandhi"},
+        {"option": "Siddhartha Gautama"},
+        {"option": "Tirthankara"}
+    ],
+    "rightAnswer": "Siddhartha Gautama",
+    "correct": "Correct",
+    "wrong": "Wrong"
+
+}

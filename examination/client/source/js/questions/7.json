@@ -1,0 +1,15 @@
+{
+
+    "info": "Kathmandu valley is home to many UNESCO world heritage sites, most of which were severely damaged by the magnitude 8 earth quake that struck the area in April 2015.",
+    "question": "How many UNESCO world heritage sites can be found in the Kathmandu Valley?",
+    "options": [
+        {"option": "2"},
+        {"option": "9"},
+        {"option": "7"},
+        {"option": "5"}
+    ],
+    "rightAnswer": "7",
+    "correct": "Correct! The cultural heritage of the Kathmandu Valley is illustrated by seven groups of monuments and buildings for which the Kathmandu Valley is world famous. The seven include the Durbar Squares of Hanuman Dhoka (Kathmandu), Patan (pictured) and Bhaktapur, the Buddhist stupas of Swayambhu and Bauddhanath and the Hindu temples of Pashupati and Changu Narayan.",
+    "wrong": "Wrong"
+
+}

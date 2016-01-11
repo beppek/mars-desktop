@@ -1,0 +1,15 @@
+{
+
+    "info": "Although Buddha was born in Nepal and there are many buddhists in the country, buddhism is only the second largest religion and most of the temples and shrines are dedicated to a different, but somewhat related religion.",
+    "question": "Which religion is the largest religion of Nepal?",
+    "options": [
+        {"option": "Islam"},
+        {"option": "Christianity"},
+        {"option": "Confucianism"},
+        {"option": "Hinduism"}
+    ],
+    "rightAnswer": "Hinduism",
+    "correct": "Correct",
+    "wrong": "Wrong"
+
+}

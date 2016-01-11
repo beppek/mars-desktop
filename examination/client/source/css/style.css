@@ -366,7 +366,6 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .destinationWindow {
     width: 600px;
     height: 600px;
-    background-image: url("../image/durbar-square.jpg");
 }
 
 .box-wrapper {
@@ -387,4 +386,27 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .continue a {
     font-size: 20px;
     text-decoration: none;
+}
+
+/*Styles to change window background based on the question, begins at 0 because programming*/
+.question0 {
+    background-image: url("../image/durbar-square.jpg");
+}
+.question1 {
+    background-image: url("../image/basecamp.jpg");
+}
+.question2 {
+    background-image: url("../image/boudhanath.jpg");
+}
+.question3 {
+    background-image: url("../image/monk.jpg");
+}
+.question4 {
+    background-image: url("../image/old-man-patan.jpg");
+}
+.question5 {
+    background-image: url("../image/pottery-smoke.jpg");
+}
+.question6 {
+    background-image: url("../image/durbar-square-patan.jpg");
 }
