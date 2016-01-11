@@ -3,8 +3,8 @@
     "info": "Nepal is a landlocked country bordering the world's 2 most populous nations, India to the south and China to the north.",
     "question": "The world's highest mountain chain runs along the northern border of Nepal, what is it called?",
     "options": [
-        {"option": "The Andees"},
-        {"option": "The Scandees"},
+        {"option": "The Andes"},
+        {"option": "The Scandes"},
         {"option": "The Himalayas"}
     ],
     "rightAnswer": "The Himalayas",

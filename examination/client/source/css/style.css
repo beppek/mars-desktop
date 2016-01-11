@@ -214,7 +214,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     background: rgba(25,25,25,0.9);
     color: aliceblue;
     width: 350px;
-    height: 470px;
+    height: 500px;
 }
 
 .aboutMe .winWorkSpace {
@@ -369,6 +369,29 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     height: 600px;
 }
 
+.startGameDiv {
+    margin: 55px 15px;
+    background-color: rgba(25,25,25,0.8);
+    padding: 15px;
+}
+
+.startGameDiv h5 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.startBG {
+    background-image: url("../image/swayambunath.jpg");
+}
+
+.startGame {
+    text-align: center;
+}
+
+.startGame a {
+    font-size: 18px;
+}
+
 .box-wrapper {
     width: 500px;
     height: 200px;
@@ -387,6 +410,12 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .continue a {
     font-size: 20px;
     text-decoration: none;
+}
+
+.answerOptions a {
+    margin: 15px 15px 15px 0;
+    display: block;
+    font-size: 18px;
 }
 
 /*Styles to change window background based on the question, begins at 0 because programming*/
@@ -410,10 +439,4 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .question6 {
     background-image: url("../image/durbar-square-patan.jpg");
-}
-
-.answerOptions a {
-    margin: 15px 15px 15px 0;
-    display: block;
-    font-size: 18px;
 }

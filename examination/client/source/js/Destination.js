@@ -27,9 +27,6 @@ var questions = [
  * */
 function Destination(currentWin) {
 
-    //localStorage.removeItem("savedgame");
-    //localStorage.removeItem("correctanswers");
-
     //Assign to the type for ease of access and change class of window to size up
     this.currentWin = currentWin;
     this.currentWin.classList.add("destinationWindow");
@@ -49,8 +46,6 @@ function Destination(currentWin) {
     this.questionDiv = document.importNode(this.contentTemplate.querySelectorAll(".question")[0], true);
     this.answerOptionsDiv = this.questionDiv.querySelectorAll(".answerOptions")[0];
     this.answerOption = this.answerOptionsDiv.querySelectorAll("template")[0].content.firstElementChild;
-
-    this.winWorkSpace.appendChild(this.boxWrapper);
 
     //Check if menu already present before adding
     if (!currentWin.querySelectorAll(".winMenu")[0]) {
@@ -81,7 +76,7 @@ function Destination(currentWin) {
         this.correctAnswers = parseInt(localStorage.correctanswers);
         this.index = parseInt(localStorage.savedgame);
 
-        if (this.index >= questions.length) {
+        if (this.index >= questions.length || isNaN(this.index)) {
 
             this.index = 0;
             this.correctAnswers = 0;
@@ -94,12 +89,40 @@ function Destination(currentWin) {
 
     }else {
 
-        this.printInfo(0);
+        //this.printInfo(0);
+        this.startGame();
         this.correctAnswers = 0;
 
     }
 
 }
+
+/**
+ *
+ * This function displays the start information when restarting the game
+ * @memberof Destination.prototype
+ * */
+Destination.prototype.startGame = function() {
+
+    this.currentWin.classList.add("startBG");
+
+    var startTemplate = this.template.querySelectorAll("template")[2].content;
+    var startDiv = document.importNode(startTemplate.firstElementChild, true);
+
+    var startGame = startDiv.querySelectorAll("a")[0];
+
+    $(startGame).click(function(event) {
+
+        event.preventDefault();
+        this.clearDiv(this.winWorkSpace);
+        this.printInfo(0);
+        this.currentWin.classList.remove("startBG");
+
+    }.bind(this));
+
+    this.winWorkSpace.appendChild(startDiv);
+
+};
 
 /**
  *
@@ -109,8 +132,11 @@ function Destination(currentWin) {
  * */
 Destination.prototype.printInfo = function(index) {
 
-    //console.log(this.correctAnswers);
-    //console.log(this.index);
+    if (!this.winWorkSpace.querySelectorAll(".box-wrapper")[0]) {
+
+        this.winWorkSpace.appendChild(this.boxWrapper);
+
+    }
 
     //Add class to display the right background image
     this.currentWin.classList.add("question" + index);
@@ -202,6 +228,9 @@ Destination.prototype.printQuestion = function(index) {
  * */
 Destination.prototype.checkAnswer = function(answer, index) {
 
+    //Boolean to store if answer was correct or not
+    var correct = false;
+
     //Add event listener
     var next = this.info.querySelectorAll(".continue")[0].firstElementChild;
     $(next).click(function(event) {
@@ -217,6 +246,12 @@ Destination.prototype.checkAnswer = function(answer, index) {
 
         index += 1;
         this.index = index;
+
+        if (correct) {
+
+            this.correctAnswers += 1;
+
+        }
 
         if (this.index < questions.length) {
 
@@ -236,7 +271,7 @@ Destination.prototype.checkAnswer = function(answer, index) {
     //Check the answers against the json object
     if (answer === questions[index].rightAnswer) {
 
-        this.correctAnswers += 1;
+        correct = true;
         this.infoPTag.appendChild(document.createTextNode(questions[index].correct));
         this.boxWrapper.appendChild(this.info);
 
