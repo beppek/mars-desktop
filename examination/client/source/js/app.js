@@ -10,39 +10,39 @@
 //requires
 var $ = require("jQuery");
 var OpenWindow = require("./Window");
-var Memory = require("./Memory");
-var Chat = require("./Chat");
-var About = require("./About");
 
-//event listeners
+//event listeners to start the apps and toggle menu
 $(document).ready(function() {
 
-    $("#startMemory").click(function() {
+    $("#startMemory").click(function(event) {
 
+        event.preventDefault();
         new OpenWindow("memory");
 
     });
 
-    $("#startChat").click(function() {
+    $("#startChat").click(function(event) {
 
+        event.preventDefault();
         new OpenWindow("chat");
 
     });
 
-    $("#startMyApp").click(function() {
+    $("#startMyApp").click(function(event) {
 
+        event.preventDefault();
         new OpenWindow("travel");
-        console.log("Nonono you don't get to see it yet!");
 
     });
 
-    $("#showAbout").click(function() {
+    $("#showAbout").click(function(event) {
 
+        event.preventDefault();
         new OpenWindow("about");
 
     });
 
-    $("#menuToggle").click(function(event) {
+    $("#menuToggleLink").click(function(event) {
 
         event.preventDefault();
         $(".menuList").toggle(300);

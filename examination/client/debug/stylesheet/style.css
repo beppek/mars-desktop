@@ -205,6 +205,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 .winWorkSpace {
     display: table;
     margin: 0 auto;
+    width: 100%;
 }
 
 /*About me window styles*/
@@ -409,4 +410,10 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 .question6 {
     background-image: url("../image/durbar-square-patan.jpg");
+}
+
+.answerOptions a {
+    margin: 15px 15px 15px 0;
+    display: block;
+    font-size: 18px;
 }

@@ -27,13 +27,10 @@ var questions = [
  * */
 function Destination(currentWin) {
 
-    //this.index = 0;
     //localStorage.removeItem("savedgame");
     //localStorage.removeItem("correctanswers");
-    //localStorage.setItem("savedgame", 6);
-    //localStorage.setItem("correctanswers", 6);
 
-    //Assign to the type for easo of access and change class of window to size up
+    //Assign to the type for ease of access and change class of window to size up
     this.currentWin = currentWin;
     this.currentWin.classList.add("destinationWindow");
 
@@ -81,11 +78,19 @@ function Destination(currentWin) {
     //Check if save game exists before start up
     if (localStorage.savedgame) {
 
-        var question = localStorage.savedgame;
         this.correctAnswers = parseInt(localStorage.correctanswers);
-        console.log(this.correctAnswers);
+        this.index = parseInt(localStorage.savedgame);
 
-        this.printInfo(question);
+        if (this.index >= questions.length) {
+
+            this.index = 0;
+            this.correctAnswers = 0;
+            localStorage.removeItem("savedgame");
+            localStorage.removeItem("correctanswers");
+
+        }
+
+        this.printInfo(this.index);
 
     }else {
 
@@ -103,6 +108,9 @@ function Destination(currentWin) {
  * @param {int} index - the question to print
  * */
 Destination.prototype.printInfo = function(index) {
+
+    //console.log(this.correctAnswers);
+    //console.log(this.index);
 
     //Add class to display the right background image
     this.currentWin.classList.add("question" + index);
@@ -166,7 +174,6 @@ Destination.prototype.printQuestion = function(index) {
     questions[index].options.forEach(function(option) {
 
         var optionTag = document.importNode(this.answerOption, true);
-        console.log(this.answerOption);
         optionTag.textContent = option.option;
 
         $(optionTag).click(function(event) {
@@ -264,15 +271,16 @@ Destination.prototype.finishedGame = function() {
 
         event.preventDefault();
         $(playAgain).unbind();
+        localStorage.removeItem("savedgame");
+        localStorage.removeItem("correctanswers");
+        this.correctAnswers = 0;
+        this.index = 0;
         this.clearDiv(this.winWorkSpace);
         new Destination(this.currentWin);
 
     }.bind(this));
 
     this.winWorkSpace.appendChild(resultsDiv);
-
-    localStorage.removeItem("savedgame");
-    localStorage.removeItem("correctanswers");
 
 };
 
@@ -284,6 +292,8 @@ Destination.prototype.finishedGame = function() {
  * */
 Destination.prototype.saveGame = function(index) {
 
+    localStorage.removeItem("savedgame");
+    localStorage.removeItem("correctanswers");
     localStorage.setItem("savedgame", index);
     localStorage.setItem("correctanswers", this.correctAnswers);
 
