@@ -370,12 +370,21 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 }
 
 .box-wrapper {
-    width: 450px;
-    height: 250px;
+    width: 500px;
+    height: 200px;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 30px;
     background-color: rgba(25,25,25,0.8);
-    box-shadow: 2px -2px 5px 1px rgba(25,25,25,0.5);
+    box-shadow: 0 0 5px 3px rgba(25,25,25,0.5);
     padding: 15px;
+}
+
+.continue {
+    text-align: center;
+    margin-top: 45px;
+}
+.continue a {
+    font-size: 20px;
+    text-decoration: none;
 }

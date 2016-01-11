@@ -9,45 +9,89 @@
 
 //requires
 var $ = require("jQuery");
+var questions = [
+    require("./questions/1.json"),
+];
+
 
 function Destination(currentWin) {
 
     currentWin.classList.add("destinationWindow");
     var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
 
-    var template = document.querySelectorAll("#myAppContent")[0].content.firstElementChild;
+    var template = document.querySelectorAll("#myAppContent")[0].content;
 
-    var infoBox = document.importNode(template, true);
+    this.boxWrapper = document.importNode(template.firstElementChild, true);
+    this.contentTemplate = template.querySelectorAll("template")[0].content;
+    this.info = document.importNode(this.contentTemplate.firstElementChild, true);
+    this.infoPTag = this.info.querySelectorAll("p")[0];
+    this.questionDiv = document.importNode(this.contentTemplate.querySelectorAll(".question")[0], true);
+    this.answerOptionsDiv = this.questionDiv.querySelectorAll(".answerOptions")[0];
+    this.answerOption = this.answerOptionsDiv.querySelectorAll("template")[0].content.firstElementChild;
 
-    var pTag = infoBox.querySelectorAll("p")[0];
-    var pClone = pTag.cloneNode(true);
+    winWorkSpace.appendChild(this.boxWrapper);
 
-    var firstInfo = document.createTextNode("Nepal has a rather interesting flag, in fact it is the only nation with a flag that is not rectangular in shape but rather made up of two triangles.");
-    var firstQuestion = document.createTextNode("The inspiration for the flag comes from the building in this picture. What is this kind of architecture called?");
+    if (localStorage.savedgame) {
 
-    var radioTemplate = infoBox.querySelectorAll("template")[0].content.firstElementChild;
-    var form = document.importNode(radioTemplate, true);
+        var question = localStorage.savedGame;
 
-    var radio1 = form.querySelectorAll("radio");
-    radio1.name = "architecture";
-    //
-    //var radio2 = radio1.cloneNode(true);
-    //
-    radio1.value = "pagoda";
+        this.printInfo(question);
 
-    console.log(radio1.value);
-    //
-    //radio2.value = "feng shui";
-    //
-    //form.appendChild(radio2);
+    }else {
 
-    pTag.appendChild(firstInfo);
-    pClone.appendChild(firstQuestion);
-    infoBox.appendChild(pClone);
-    infoBox.appendChild(form);
+        this.printInfo(0);
 
-    winWorkSpace.appendChild(infoBox);
+    }
 
 }
+
+Destination.prototype.printInfo = function(index) {
+
+    this.infoPTag.appendChild(document.createTextNode(questions[index].info));
+
+    var next = this.info.querySelectorAll(".continue")[0].firstElementChild;
+
+    $(next).click(function(event) {
+
+        event.preventDefault();
+
+        console.log("clicked");
+
+        //Remove content from box
+        while (this.boxWrapper.firstChild) {
+            this.boxWrapper.removeChild(this.boxWrapper.firstChild);
+        }
+
+        this.printQuestion(index);
+
+    }.bind(this));
+
+    this.boxWrapper.appendChild(this.info);
+
+};
+
+Destination.prototype.printQuestion = function(index) {
+
+    this.questionDiv.firstElementChild.appendChild(document.createTextNode(questions[index].question));
+
+    this.boxWrapper.appendChild(this.questionDiv);
+
+    questions[index].options.forEach(function(option) {
+
+        //console.log(option);
+        var optionTag = document.importNode(this.answerOption, true);
+        optionTag.textContent = option.option;
+
+        this.answerOptionsDiv.appendChild(optionTag);
+
+    }.bind(this));
+
+};
+
+Destination.prototype.saveGame = function(index) {
+
+
+
+};
 
 module.exports = Destination;

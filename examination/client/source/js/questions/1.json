@@ -1,0 +1,11 @@
+{
+
+    "info": "Nepal has a rather interesting flag, in fact it is the only nation with a flag that is not rectangular in shape but rather made up of two triangles.",
+    "question": "The inspiration for the flag comes from the building in this picture. What is this kind of architecture called?",
+    "options": [
+        {"option": "Pagoda"},
+        {"option": "Feng Shui"}
+    ],
+    "postQuestionInfo": "Some info"
+
+}
