@@ -4,11 +4,11 @@
     "question": "The Nepali make a special kind of usually very colourful fabric from the wool of a special breed of goat, what is that fabric (and the goat breed) called?",
     "options": [
         {"option": "Pashmina"},
-        {"option": "Kashmir"},
+        {"option": "Changpa"},
         {"option": "Yak"},
     ],
     "rightAnswer": "Pashmina",
-    "correct": "Correct",
-    "wrong": "Wrong"
+    "correct": "Correct! The fibre is also known as pashm or pashmina for its use in the handmade shawls of the Himalayas.",
+    "wrong": "Sorry, wrong answer. The fibre is also known as pashm or pashmina for its use in the handmade shawls of the Himalayas."
 
 }
