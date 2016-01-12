@@ -21,8 +21,6 @@ function Chat(currentWin) {
 
     this.socket = null;
 
-    //localStorage.removeItem("username");
-
     //Checks if username is set in local storage
     if (localStorage.username) {
 
@@ -56,7 +54,6 @@ function Chat(currentWin) {
 
             event.preventDefault();
             this.selectUsername(currentWin);
-            return;
 
         }.bind(this));
 
@@ -268,9 +265,11 @@ Chat.prototype.printMessage = function(message) {
  * */
 Chat.prototype.timeStamp = function() {
 
+    //Create arrays to write weekday and month
     var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+    //Create date object and read
     var dateObject = new Date();
     var weekday = weekDays[dateObject.getDay()];
     var month = months[dateObject.getMonth()];

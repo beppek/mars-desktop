@@ -43,6 +43,22 @@ function Window(app) {
                 left = 170;
             }
 
+            //"Bounce" next window back up to top if at bottom of screen
+            if (($(e.target).offset().top + $(e.target).height()) >= $(window).height()) {
+
+                top = 20;
+                left += 50;
+
+            }
+
+            //Bounce back left if right edge is at edge of screen
+            if (($(window).width() - ($(e.target).offset().left + $(e.target).outerWidth())) <= 0) {
+
+                top = 20;
+                left = 190;
+
+            }
+
             zCount += 1;
             e.target.style.zIndex = zCount;
             e.target.style.top = top + "px";

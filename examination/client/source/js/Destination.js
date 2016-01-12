@@ -58,11 +58,10 @@ function Destination(currentWin) {
 
         menuItem.textContent = "Save Game";
 
-        menuItem.addEventListener("click", function (event) {
+        menuItem.addEventListener("click", function(event) {
 
             event.preventDefault();
             this.saveGame(this.index);
-            return;
 
         }.bind(this));
 
@@ -132,6 +131,7 @@ Destination.prototype.startGame = function() {
  * */
 Destination.prototype.printInfo = function(index) {
 
+    //Check if the box-wrapper div is there before adding to the window
     if (!this.winWorkSpace.querySelectorAll(".box-wrapper")[0]) {
 
         this.winWorkSpace.appendChild(this.boxWrapper);
@@ -173,7 +173,7 @@ Destination.prototype.printInfo = function(index) {
  * */
 Destination.prototype.clearDiv = function(element) {
 
-    //Remove content from div
+    //Remove content from element
     while (element.firstChild) {
 
         element.removeChild(element.firstChild);
@@ -262,7 +262,6 @@ Destination.prototype.checkAnswer = function(answer, index) {
             this.finishedGame();
         }
 
-
     }.bind(this));
 
     //Populate UI
@@ -291,21 +290,25 @@ Destination.prototype.checkAnswer = function(answer, index) {
  * */
 Destination.prototype.finishedGame = function() {
 
+    //Resizes the window and clears the contents
     this.currentWin.classList.remove("destinationWindow");
     this.clearDiv(this.winWorkSpace);
 
+    //Find template and import
     var template = this.template.querySelectorAll("template")[1].content;
-
     var resultsDiv = document.importNode(template.firstElementChild, true);
 
+    //Print number of correct answers
     resultsDiv.querySelectorAll("p")[0].appendChild(document.createTextNode(this.correctAnswers + " correct answers!"));
 
+    //Add event listener to restart the game
     var playAgain = resultsDiv.querySelectorAll("a")[0];
-
     $(playAgain).click(function(event) {
 
         event.preventDefault();
         $(playAgain).unbind();
+
+        //Clear local storage and reset variables
         localStorage.removeItem("savedgame");
         localStorage.removeItem("correctanswers");
         this.correctAnswers = 0;
