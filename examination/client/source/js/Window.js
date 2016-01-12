@@ -47,7 +47,7 @@ function Window(app) {
             if (($(e.target).offset().top + $(e.target).height()) >= $(window).height()) {
 
                 top = 20;
-                left += 50;
+                left += 30;
 
             }
 
@@ -55,7 +55,7 @@ function Window(app) {
             if (($(window).width() - ($(e.target).offset().left + $(e.target).outerWidth())) <= 0) {
 
                 top = 20;
-                left = 190;
+                left = 200;
 
             }
 

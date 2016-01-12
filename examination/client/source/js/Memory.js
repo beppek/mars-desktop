@@ -22,7 +22,7 @@ function Memory(currentWin, rows, cols) {
 
     currentWin.classList.remove("selectSize");
 
-    //Sets size of window for smaller than large
+    //Sets size of window
     if (rows * cols === 16) {
         currentWin.classList.add("large");
     }
