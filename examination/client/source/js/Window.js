@@ -156,6 +156,7 @@ Window.prototype.initApp = function(app, currentWin) {
             chat.connect().then(function(socket) {
 
             });
+
             break;
 
         case "memory":

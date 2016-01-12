@@ -46,7 +46,7 @@ $(document).ready(function() {
 
         event.preventDefault();
         $(".menuList").toggle(300);
-        $(this).toggleClass("open");
+        $("#menuToggle").toggleClass("open");
 
     });
 
