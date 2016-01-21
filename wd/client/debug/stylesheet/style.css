@@ -15,6 +15,9 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
 
 /*Menu styles*/
 #menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -26,7 +29,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     background-color: rgba(25,25,25,0.8);
 }
 #menu ul {
-    width: 120px;
+    width: 100px;
     margin: 150px 0;
     padding: 0;
     list-style-type: none;
@@ -42,7 +45,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     position: absolute;
     padding: 35px 35px;
     top: 25px;
-    left: 25px;
+    left: 15px;
     border-radius: 5px;
     text-decoration: none;
     -webkit-transform: rotate(0deg);
@@ -115,6 +118,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0,0,0,0);
     border: solid 3px rgba(0,0,0,0);
     padding: 10px;
+    margin: 25px 0;
 }
 .menuList li:hover {
     background-color: rgba(55,55,55,0.5);
@@ -127,7 +131,7 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     padding-left: 150px;
     height: 100vh;
     width: 100%;
-    background-image: url("../image/bg.jpg");
+    background-image: url("../image/bg2.jpg");
 }
 
 /*Window styles*/
