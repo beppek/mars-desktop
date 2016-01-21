@@ -1,0 +1,15 @@
+{
+
+    "info": "Buddha's birthplace is often attributed to Nepal even though he spent most of his life in India. Buddha was a sage whose teachings became the foundation of buddhism, however Buddha was not his real name but rather a taken one meaning: \"the enlightened one\".",
+    "question": "What was Buddha's real name?",
+    "options": [
+        {"option": "Confucius"},
+        {"option": "Mahatma Gandhi"},
+        {"option": "Siddhartha Gautama"},
+        {"option": "Tirthankara"}
+    ],
+    "rightAnswer": "Siddhartha Gautama",
+    "correct": "Correct! According to the Buddhist tradition, Siddhartha Gautama was born in Lumbini, now in modern-day Nepal, and raised in the Shakya capital of Kapilvastu, which may have been in either present day Tilaurakot, Nepal or Piprahwa, India. He obtained his enlightenment in Bodh Gaya, gave his first sermon in Sarnath, and died in Kushinagar.",
+    "wrong": "Sorry, wrong answer. According to the Buddhist tradition, Siddhartha Gautama was born in Lumbini, now in modern-day Nepal, and raised in the Shakya capital of Kapilvastu, which may have been in either present day Tilaurakot, Nepal or Piprahwa, India. He obtained his enlightenment in Bodh Gaya, gave his first sermon in Sarnath, and died in Kushinagar."
+
+}

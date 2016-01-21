@@ -1,0 +1,15 @@
+{
+
+    "info": "Nepal is one of the poorest countries on the planet, though the number of poor people is declining, as in most other developing nations in the world. The percentage of people living below the international poverty line (people earning less than US$1.25 per day) halved from 2003 until 2010.",
+    "question": "What percentage of people live below the poverty line in Nepal (2011 data)?",
+    "options": [
+        {"option": "53.1%"},
+        {"option": "45.6%"},
+        {"option": "57.3%"},
+        {"option": "24.8%"}
+    ],
+    "rightAnswer": "24.8%",
+    "correct": "Correct! The Nepali are rising from poverty along with the rest of the developing world and these days you shouldn't be surprised to find a smartphone in the hands of the younger Nepali, I have one myself. It cost me one month's salary but it lets me check Facebook. Hey, do you want to be my Facebook friend?",
+    "wrong": "Sorry, wrong answer. The Nepali are rising from poverty along with the rest of the developing world and these days you shouldn't be surprised to find a smartphone in the hands of the younger Nepali, I have one myself. It cost me one month's salary but it lets me check Facebook. Hey, do you want to be my Facebook friend?"
+
+}

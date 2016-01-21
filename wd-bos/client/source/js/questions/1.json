@@ -1,0 +1,13 @@
+{
+
+    "info": "Nepal has a rather interesting flag, in fact it is the only nation with a flag that is not rectangular in shape but rather made up of two triangles.",
+    "question": "The inspiration for the flag is said to come from the building in this picture and the mighty mountain chain in the background. What is this kind of architecture called?",
+    "options": [
+        {"option": "Pagoda"},
+        {"option": "Feng Shui"}
+    ],
+    "rightAnswer": "Pagoda",
+    "correct": "Correct! A pagoda is a tiered tower with multiple eaves, built in traditions originating in historic East Asia. The modern pagoda is an evolution of the Ancient Nepal stupa, a tomb-like structure where sacred relics could be kept safe and venerated.",
+    "wrong": "Sorry, wrong answer. A pagoda is a tiered tower with multiple eaves, built in traditions originating in historic East Asia. The modern pagoda is an evolution of the Ancient Nepal stupa, a tomb-like structure where sacred relics could be kept safe and venerated."
+
+}

@@ -1,0 +1,14 @@
+{
+
+    "info": "Nepal is a landlocked country bordering the world's 2 most populous nations, India to the south and China to the north.",
+    "question": "The world's highest mountain chain runs along the northern border of Nepal, what is it called?",
+    "options": [
+        {"option": "The Andes"},
+        {"option": "The Scandes"},
+        {"option": "The Himalayas"}
+    ],
+    "rightAnswer": "The Himalayas",
+    "correct": "Correct! The Himalayas (meaning \"abode of snow\" in sanskrit) is home to 9 of the 10 highest peaks on earth, including the highest mountain above sea level, Mount Everest.",
+    "wrong": "Sorry, wrong answer. The Himalayas (meaning \"abode of snow\" in sanskrit) is home to 9 of the 10 highest peaks on earth, including the highest mountain above sea level, Mount Everest."
+
+}

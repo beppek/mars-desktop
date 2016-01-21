@@ -1,0 +1,445 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(25,25,25);
+    overflow: hidden;
+}
+
+/*Text styles*/
+p, a, li, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lucida Console", monospace;
+    color: aliceblue;
+    font-size: 15px;
+}
+
+/*Menu styles*/
+#menu {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    box-shadow: 2px 0 5px 1px rgba(25,25,25,0.5);
+    background-color: rgba(165,65,45,0.8);
+}
+#menu ul {
+    width: 150px;
+    margin: 150px 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    display: none;
+}
+#menu li:hover {
+    cursor: pointer;
+}
+
+#menuToggle {
+    line-height: 40px;
+    position: absolute;
+    padding: 35px 35px;
+    top: 25px;
+    left: 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+#menuToggle span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: aliceblue;
+    border-radius: 5px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+#menuToggle span:nth-child(1) {
+    top: 15px;
+}
+#menuToggle span:nth-child(2), #menuToggle span:nth-child(3) {
+    top: 40px;
+}
+#menuToggle span:nth-child(4) {
+    top: 65px;
+}
+#menuToggle.open span:nth-child(1) {
+    top: 18px;
+    width: 0;
+    left: 50%;
+}
+#menuToggle.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#menuToggle.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#menuToggle.open span:nth-child(4) {
+    top: 18px;
+    width: 0;
+    left: 50%;
+}
+.menuList img {
+    width: 60px;
+    padding: 10px;
+}
+.menuList img:hover {
+}
+.menuList li {
+    background-color: rgba(0,0,0,0);
+    border: solid 3px rgba(0,0,0,0);
+    margin-bottom: 30px;
+}
+.menuList li:hover {
+    background-color: rgba(55,55,55,0.5);
+    border: solid 3px rgba(25,25,25,0.5);
+    /*border-radius: 5px;*/
+}
+
+/*Workspace styles*/
+#workspace {
+    padding-left: 150px;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../image/bg.jpg");
+}
+
+/*Window styles*/
+.window {
+    background: rgba(25,25,25,0.9);
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 20px;
+    left: 170px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 1px 2px 3px 3px rgba(25,25,25,0.4);
+}
+.statusbar {
+    background: linear-gradient(rgb(100,100,100), rgb(25,25,25));
+    height: 35px;
+    cursor: move;
+}
+.closeWindow {
+    font-family: "Lucida Console", monospace;
+    color: aliceblue;
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 5px 15px;
+    background: linear-gradient(lightsalmon, tomato);
+}
+.closeWindow:hover {
+    cursor: pointer;
+}
+.appIcon {
+    font-family: "Lucida Console", monospace;
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    line-height: 35px ;
+    color: aliceblue;
+}
+.appIcon img {
+    width: 30px;
+    margin: 2px;
+    background: none;
+}
+.winMenu {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(20,20,20);
+    height: 20px;
+    line-height: 20px;
+}
+.winMenu span {
+    color: aliceblue;
+    font-family: "Lucida Console", monospace;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.winMenu a {
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 20px;
+    background-color: rgb(20,20,20);
+    min-width: 100px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.winMenu:hover .dropdown-content {
+    display: block;
+}
+.winWorkSpace {
+    display: table;
+    margin: 0 auto;
+    width: auto;
+}
+
+/*About me window styles*/
+.aboutMe {
+    font-family: "Lucida Console", monospace;
+    background: rgba(25,25,25,0.9);
+    color: aliceblue;
+    width: 350px;
+    height: 500px;
+}
+
+.aboutMe .winWorkSpace {
+    display: block;
+    margin: 10px;
+}
+
+.aboutMe p, .aboutMe a {
+    font-size: 13px!important;
+    color: aliceblue!important;
+}
+
+.aboutMe h5 {
+    margin-top: 15px;
+}
+
+.aboutMe h6 {
+    margin-bottom: 5px;
+    padding-left: 5px;
+    border-left: solid 3px aliceblue;
+}
+
+/*Styles for the memory window*/
+.winWorkSpace img {
+    width: 60px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(165,65,45,0.8);
+}
+.memoryGame {
+    margin-top: 20px;
+}
+
+.pairedBrick {
+    visibility: hidden;
+}
+
+.selectSize {
+    height: 300px;
+    width: 300px;
+}
+
+.large {
+    width: 450px;
+    height: 500px;
+}
+.medium {
+    height: 300px;
+    width: 450px;
+}
+.small {
+    height: 300px;
+    width: 300px;
+}
+
+.memorySize {
+    text-align: center;
+    margin-top: 50px;
+}
+.memorySize a {
+    font-size: 40px;
+    text-decoration: none;
+}
+.memorySize a:hover {
+    color: steelblue;
+}
+
+.presentScore {
+    color: aliceblue;
+    margin: 0 15px
+}
+
+/*Chat style*/
+.messages {
+    height: 340px;
+    overflow: auto;
+}
+.messages p {
+    margin: 15px;
+}
+.message {
+    clear: both;
+}
+.message .author {
+    margin-bottom: 0;
+    clear: both;
+}
+.message .text {
+    margin-top: 0;
+    background-color: steelblue;
+    border-radius: 0 5px 5px 5px;
+    padding: 10px;
+    width: auto;
+    float: left;
+    display: block;
+    margin-bottom: 3px;
+}
+.message .time {
+    margin-top: 0;
+    font-size: 12px;
+    clear: both;
+}
+.messageTextDiv {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(165,65,45,0.8);
+}
+.messageArea {
+    display: block;
+    width: 420px;
+    height: 70px;
+    border: none;
+    margin: 15px auto 15px;
+}
+.me {
+    float: right;
+    text-align: right;
+}
+.me .text {
+    border-radius: 5px 0 5px 5px;
+    float: right;
+}
+.selectUsername {
+    margin: 15px;
+}
+.selectUsername #username {
+    width: 215px;
+    margin: 20px auto;
+    height: 20px;
+    font-family: "Lucida Console", monospace;
+}
+.selectUsername #submitBtn {
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    display: block;
+    font-family: "Lucida Console", monospace;
+    cursor: pointer;
+    background-color: steelblue;
+    border: none;
+
+}
+.selectUsername #submitBtn:hover {
+    background-color: rgba(165,65,45,0.8);
+}
+
+/*Styles for my app*/
+.destinationWindow {
+    width: 600px;
+    height: 600px;
+}
+
+.startGameDiv {
+    margin: 55px 15px;
+    background-color: rgba(25,25,25,0.8);
+    padding: 15px;
+}
+
+.startGameDiv h5 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.startBG {
+    background-image: url("../image/swayambunath.jpg");
+}
+
+.startGame {
+    text-align: center;
+}
+
+.startGame a {
+    font-size: 18px;
+}
+
+.box-wrapper {
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    background-color: rgba(25,25,25,0.8);
+    box-shadow: 0 0 5px 3px rgba(25,25,25,0.5);
+    padding: 15px;
+}
+
+.continue {
+    text-align: center;
+    margin-top: 45px;
+}
+.continue a {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.answerOptions a {
+    margin: 15px 15px 15px 0;
+    display: block;
+    font-size: 18px;
+}
+
+/*Styles to change window background based on the question, begins at 0 because programming*/
+.question0 {
+    background-image: url("../image/durbar-square.jpg");
+}
+.question1 {
+    background-image: url("../image/basecamp.jpg");
+}
+.question2 {
+    background-image: url("../image/boudhanath.jpg");
+}
+.question3 {
+    background-image: url("../image/monk.jpg");
+}
+.question4 {
+    background-image: url("../image/old-man-patan.jpg");
+}
+.question5 {
+    background-image: url("../image/pottery-smoke.jpg");
+}
+.question6 {
+    background-image: url("../image/durbar-square-patan.jpg");
+}
