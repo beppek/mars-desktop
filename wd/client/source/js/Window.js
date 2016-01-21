@@ -11,7 +11,7 @@
 var $ = require("jQuery");
 var About = require("./About");
 var Memory = require("./Memory");
-var Chat = require("./Chat");
+//var Chat = require("./Chat");
 var Destination = require("./Destination");
 
 //Global variables
@@ -150,14 +150,14 @@ Window.prototype.initApp = function(app, currentWin) {
             About(currentWin);
             break;
 
-        case "chat":
-
-            var chat = new Chat(currentWin);
-            chat.connect().then(function(socket) {
-
-            });
-
-            break;
+        //case "chat":
+        //
+        //    var chat = new Chat(currentWin);
+        //    chat.connect().then(function(socket) {
+        //
+        //    });
+        //
+        //    break;
 
         case "memory":
 
