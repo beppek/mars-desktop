@@ -42,6 +42,13 @@ $(document).ready(function() {
 
     });
 
+    $("#settings").click(function(event) {
+
+        event.preventDefault();
+        new OpenWindow("settings");
+
+    });
+
     $("#menuToggleLink").click(function(event) {
 
         event.preventDefault();

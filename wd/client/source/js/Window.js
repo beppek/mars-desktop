@@ -13,6 +13,7 @@ var About = require("./About");
 var Memory = require("./Memory");
 //var Chat = require("./Chat");
 var Destination = require("./Destination");
+var Settings = require("./Settings");
 
 //Global variables
 var dragObject;
@@ -201,6 +202,12 @@ Window.prototype.initApp = function(app, currentWin) {
         case "travel":
 
             new Destination(currentWin);
+
+            break;
+
+        case "settings":
+
+            new Settings(currentWin);
 
     }
 
