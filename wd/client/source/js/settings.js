@@ -19,8 +19,6 @@ function Settings(currentWin) {
     currentWin.classList.add("settingsWin");
     var winWorkSpace = currentWin.querySelectorAll(".winWorkSpace")[0];
 
-    var background = document.querySelector("#workspace");
-
     //Create window from template
     var template = document.querySelector("#settingsContent");
     var tClone = document.importNode(template.content, true);
@@ -34,7 +32,9 @@ function Settings(currentWin) {
         $("select option:selected" ).each(function() {
 
             bg = $(this).text();
-            background.style.backgroundImage = "url('../mars/wd/client/debug/image/bg" + bg + ".jpg')";
+            //background.style.backgroundImage = "url('/image/bg" + bg + ".jpg')";
+            $("#workspace").removeClass();
+            $("#workspace").addClass("bg" + bg);
 
         });
 
