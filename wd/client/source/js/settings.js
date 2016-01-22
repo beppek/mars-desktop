@@ -35,7 +35,6 @@ function Settings(currentWin) {
 
             bg = $(this).text();
             background.style.backgroundImage = "url('../image/bg" + bg + ".jpg')";
-            //console.log("url('../image/bg" + bg + ".png'")
 
         });
 
