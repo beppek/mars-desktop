@@ -34,7 +34,7 @@ function Settings(currentWin) {
         $("select option:selected" ).each(function() {
 
             bg = $(this).text();
-            background.style.backgroundImage = "url('/mars/wd/client/debug//image/bg" + bg + ".jpg')";
+            background.style.backgroundImage = "url('/mars/wd/client/debug/image/bg" + bg + ".jpg')";
 
         });
 
