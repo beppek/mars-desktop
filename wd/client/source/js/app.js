@@ -14,7 +14,15 @@ var OpenWindow = require("./Window");
 //event listeners to start the apps and toggle menu
 $(document).ready(function() {
 
-    $("#workspace").addClass("bg2");
+    if (localStorage.bgimg) {
+
+        $("#workspace").addClass("bg" + localStorage.bgimg);
+
+    }else {
+
+        $("#workspace").addClass("bg2");
+
+    }
 
     $("#startMemory").click(function(event) {
 

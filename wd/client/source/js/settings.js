@@ -35,6 +35,7 @@ function Settings(currentWin) {
             //background.style.backgroundImage = "url('/image/bg" + bg + ".jpg')";
             $("#workspace").removeClass();
             $("#workspace").addClass("bg" + bg);
+            localStorage.setItem("bgimg", bg);
 
         });
 
