@@ -34,7 +34,7 @@ function Settings(currentWin) {
         $("select option:selected" ).each(function() {
 
             bg = $(this).text();
-            background.style.backgroundImage = "url('../image/bg" + bg + ".jpg')";
+            background.style.backgroundImage = "url('/image/bg" + bg + ".jpg')";
             //console.log("url('../image/bg" + bg + ".png'")
 
         });
