@@ -260,7 +260,11 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
     background: rgba(25,25,25,0.9);
     color: aliceblue;
     width: 350px;
-    height: 550px;
+    height: 580px;
+}
+.aboutContainer {
+    width: 338px;
+    height: 515px;
     overflow: auto;
 }
 
