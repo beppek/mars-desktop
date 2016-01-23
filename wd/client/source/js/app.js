@@ -59,10 +59,18 @@ $(document).ready(function() {
 
     });
 
+    $("#menuTrigger").mouseover(function(event) {
+
+        event.preventDefault();
+        $(".menuList").toggle(100);
+        $("#menuToggle").toggleClass("open");
+
+    });
+
     $("#menuToggleLink").click(function(event) {
 
         event.preventDefault();
-        $(".menuList").toggle(300);
+        $(".menuList").toggle(100);
         $("#menuToggle").toggleClass("open");
 
     });
